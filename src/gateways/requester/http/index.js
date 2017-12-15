@@ -5,7 +5,6 @@ const errors = require('request-promise/errors');
 const RequesterService = require('../RequesterService');
 
 
-const RADIX_BASE = 10;
 const REQUEST_OPTIONS = {
   json: true,
   timeout: 120000,
@@ -17,11 +16,7 @@ const REQUEST_OPTIONS = {
 class HTTPRequesterService extends RequesterService {
   constructor(options = {}) {
     super('HttpRequester', options);
-
     this.options = Object.assign(options, REQUEST_OPTIONS);
-    if (options.timeout && typeof options.timeout === 'string') {
-      this.options.timeout = parseInt(options.timeout, RADIX_BASE);
-    }
     this.retryError = errors.RequestError;
   }
 
