@@ -3,9 +3,8 @@ const retry = require('retry-as-promised');
 
 const Gateway = require('../../gateways');
 
+
 const ERROR_FAILED_ON_REQUEST = 'Failed request to: %s%s';
-
-
 const RETRY_EXPONENTIAL_BACKOFF_SETTINGS = {
   max: 3,
   match: [],
@@ -19,7 +18,6 @@ class Requester extends Gateway {
   constructor(service) {
     super(service);
     this.useRetry = this.service.useRetry;
-
     RETRY_EXPONENTIAL_BACKOFF_SETTINGS.match.push(this.service.retryError);
   }
 
