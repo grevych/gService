@@ -19,13 +19,16 @@ const dependencies = require('../package.json').dependencies;
 const gatewayName = 'requester';
 const serviceName = 'request-promise';
 const options = {
-  url: 'https://localhost:3000/api/v1/',
+  url: 'https://status.github.com/api/',
   version: dependencies[serviceName]
 };
 
 const requester = gService.create(gatewayName, serviceName, options);
 requester.setModule(request);
-requester.request('objects')
-  .then(response => console.log(response));
+requester.request('status.json')
+  .then(response => {
+      console.log('Github status: %s', response.body.status);
+      console.log('Last update: %s', response.body.last_updated);
+  });
 
 ```
