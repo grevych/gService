@@ -34,5 +34,6 @@
     "sinon": "^2.1.0"
   },
   "dependencies": {
+    "retry-as-promised": "^2.3.2"
   }
 }
