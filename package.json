@@ -2,7 +2,7 @@
   "name": "gService",
   "version": "1.0.0",
   "description": "",
-  "main": "src/gateways/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha --recursive ./test/**",
     "lint": "NODE_ENV=test ./node_modules/.bin/eslint .",
@@ -26,31 +26,13 @@
   },
   "homepage": "https://github.com/grevych/gService#README",
   "devDependencies": {
-    "amqplib-mocks": "^1.1.1",
     "chai": "^3.5.0",
     "eslint": "^3.16.0",
-    "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "http-status-codes": "^1.1.6",
-    "install": "^0.8.7",
-    "ioredis-mock": "^2.4.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "mock-aws": "^1.2.3",
-    "npm": "^4.4.1",
     "sinon": "^2.1.0"
   },
   "dependencies": {
-    "amqplib": "0.5.1",
-    "aws-sdk": "2.94.0",
-    "config": "1.26.1",
-    "ioredis": "3.2.1",
-    "ioredis-lock": "3.4.0",
-    "request": "2.81.0",
-    "request-promise": "4.2.1",
-    "retry-as-promised": "2.3.0",
-    "sprintf": "0.1.5",
-    "valid-url": "1.0.9",
-    "winston": "2.3.1"
   }
 }
